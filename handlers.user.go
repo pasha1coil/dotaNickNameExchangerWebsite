@@ -1,9 +1,7 @@
 package main
 
 import (
-	"math/rand"
 	"net/http"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -37,14 +35,6 @@ func performLogin(c *gin.Context) {
 			"ErrorTitle":   "Login Failed",
 			"ErrorMessage": "Invalid credentials provided"})
 	}
-}
-
-// пока что опустим генеарцию токена
-func generateSessionToken() string {
-	// Мы используем случайную строку из 16 символов в качестве маркера сеанса
-	// Это НЕ безопасный способ создания токенов сеанса
-	// НЕ ИСПОЛЬЗУЙТЕ ЭТО В ПРОДУКЦИИ
-	return strconv.FormatInt(rand.Int63(), 16)
 }
 
 func logout(c *gin.Context) {
