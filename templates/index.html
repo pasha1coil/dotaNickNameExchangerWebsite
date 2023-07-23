@@ -1,0 +1,30 @@
+
+{{ template "header.html" .}}
+<table class="table">
+  <thead>
+    <tr>
+      <th>NickName</th>
+      <th>Description</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{range .MyOutput }}
+    <tr>
+      <td>
+        <a href="/NickName/view/{{.Postedid}}">
+          <p>{{.Title}}</p>
+        </a>
+      </td>
+      <td>
+        <p>{{.Content}}</p>
+      </td>
+      <td>
+        <p>{{.Username}}</p>
+      </td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+{{ template "footer.html" .}}

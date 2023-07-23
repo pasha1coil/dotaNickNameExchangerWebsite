@@ -1,0 +1,10 @@
+
+{{ template "header.html" .}}
+
+<div>
+  <strong>The article was successfully submitted.</strong>
+  
+  <a href="/article/view/{{.payload.Postedid}}">{{.payload.Title}}</a>
+</div>
+    
+{{ template "footer.html" .}}
